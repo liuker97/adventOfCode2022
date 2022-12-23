@@ -4,6 +4,8 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 from typing import List
 
+from utils.utils import getLinesOfFile
+
 
 class Elf:
     def __init__(self, calories: List[str]):
@@ -11,13 +13,6 @@ class Elf:
 
     def totalCalories(self):
         return sum([int(cal) for cal in self.carriedCalories])
-
-
-def getLinesOfFile(filename: str):
-    with open(filename) as file:
-        lines = [line.rstrip() for line in file]
-    return lines
-
 
 def getElvesFromFile():
     lines = getLinesOfFile('src/day1/input.txt')
